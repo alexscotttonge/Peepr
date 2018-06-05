@@ -1,13 +1,12 @@
 require "rails_helper"
+include SignIn
 
 RSpec.feature "User signs in with email" do
   scenario "successfully" do
-    user = create :user
 
     visit sign_in_path
-    fill_in "session_email_or_username", with: user.email
-    fill_in "session_password", with: user.password
-    click_button "Sign in"
+    
+    sign_in_with_email
 
     expect(page).to have_css "h1", text: "Dashboard"
   end
