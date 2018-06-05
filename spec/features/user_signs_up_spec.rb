@@ -11,6 +11,6 @@ RSpec.feature "User visits sign up page" do
     fill_in "user_password", with: "Dogs"
     click_button "Sign up"
 
-    expect(page).to have_css "h1", text: "Peepr"
+    expect(page).to have_css "h1", text: "Dashboard"
   end
 end

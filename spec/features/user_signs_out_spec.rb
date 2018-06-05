@@ -9,7 +9,7 @@ RSpec.feature "User signs out" do
     fill_in "session_password", with: user.password
     click_button "Sign in"
 
-    expect(page).to have_css "h1", text: "Peepr"
+    expect(page).to have_css "h1", text: "Dashboard"
 
     click_on "Sign out"
 
