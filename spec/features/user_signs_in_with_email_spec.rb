@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "User signs in" do
+RSpec.feature "User signs in with email" do
   scenario "successfully" do
     user = create :user
 
