@@ -3,4 +3,6 @@ class Peep < ApplicationRecord
 
   validates :body, presence: true, length: { in: 1..140 }
   validates :user, presence: true
+
+  default_scope { order(created_at: :desc) }
 end
