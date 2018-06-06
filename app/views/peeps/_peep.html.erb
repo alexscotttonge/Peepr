@@ -1,5 +1,7 @@
 <div>
-  <%= peep.username %>
+  <%= link_to peep.username, peep.user %>
   <%= peep.body %>
-  <%= time_ago_in_words(peep.created_at) %> ago
+  <%= link_to peep do %>
+    <%= time_ago_in_words(peep.created_at) %> ago
+  <% end %>
 </div>

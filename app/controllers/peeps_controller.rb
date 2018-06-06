@@ -1,5 +1,10 @@
 class PeepsController < ApplicationController
 
+  def show
+    peep = Peep.find(params[:id])
+    render locals: { peep: peep }
+  end
+
   def create
     peep = current_user.peeps.create(peep_params)
 
