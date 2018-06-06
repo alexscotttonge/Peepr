@@ -1,4 +1,5 @@
 require "rails_helper"
+include SignIn
 
 RSpec.feature "User creates a peep" do
   scenario "successfully" do
@@ -9,6 +10,7 @@ RSpec.feature "User creates a peep" do
     click_on "Peep!"
 
     expect(page).to have_content "Peeped successfully!"
+    expect(page).to have_content "Here me now"
   end
 end
 

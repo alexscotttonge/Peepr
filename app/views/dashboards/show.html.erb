@@ -5,3 +5,9 @@
   <%= form.text_field :body, placeholder: "Peep!", required: true %>
   <%= form.submit "Peep!" %>
 <% end %>
+
+<% peeps.each do |peep| %>
+  <div>
+    <%= peep.body %>
+  </div>
+<% end %>
