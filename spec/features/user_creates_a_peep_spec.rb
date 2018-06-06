@@ -11,3 +11,15 @@ RSpec.feature "User creates a peep" do
     expect(page).to have_content "Peeped successfully!"
   end
 end
+
+RSpec.feature "User creates a peep over 140 characters" do
+  scenario "it doesn't save" do
+    visit sign_in_path
+    sign_in_with_email
+
+    fill_in "peep_body", with: "A" * 141
+    click_on "Peep!"
+
+    expect(page).to have_content "Could not Peep yo"
+  end
+end
