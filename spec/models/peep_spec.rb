@@ -6,6 +6,7 @@ end
 
 RSpec.describe Peep, "validations" do
   it { is_expected.to validate_presence_of :body }
+  it { is_expected.to validate_presence_of :user }
 end
 
 RSpec.describe Peep, "saving Peeps" do

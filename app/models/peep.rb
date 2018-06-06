@@ -1,5 +1,6 @@
 class Peep < ApplicationRecord
   belongs_to :user
 
-  validates :body, presence: true
+  validates :body, presence: true, length: { in: 1..140 }
+  validates :user, presence: true
 end
