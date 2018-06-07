@@ -14,7 +14,7 @@ RSpec.feature "User creates a peep" do
   end
 end
 
-RSpec.feature "User creates a peep over 140 characters" do
+RSpec.feature "User creates a peep over 140 characters", skip: true do
   scenario "it doesn't save" do
     visit sign_in_path
     sign_in_with_email
