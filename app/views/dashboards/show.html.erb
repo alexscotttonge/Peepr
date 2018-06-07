@@ -1,11 +1,19 @@
 <h1>Dashboard</h1>
 
 <%= form_for peep do |form| %>
+  <%= form.hidden_field :content_type, value: "TextPeep" %>
   <%= form.fields_for :content do |content_form| %>
-    <%= form.label :peep %>
     <%= content_form.text_field :body, placeholder: "Peep!", required: true %>
   <% end %>
   <%= form.submit "Peep!" %>
+<% end %>
+
+<%= form_for peep do |form| %>
+  <%= form.hidden_field :content_type, value: "PhotoPeep" %>
+  <%= form.fields_for :content do |content_form| %>
+    <%= content_form.file_field :image, required: true %>
+  <% end %>
+  <%= form.submit "Peep with image!" %>
 <% end %>
 
 <%= render peeps %>

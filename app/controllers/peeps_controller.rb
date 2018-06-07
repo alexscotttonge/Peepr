@@ -18,11 +18,18 @@ class PeepsController < ApplicationController
     end
 
     def content_from_params
-      TextPeep.new(content_params)
+      case params[:peep][:content_type]
+      when "TextPeep" then TextPeep.new(text_peep_content_params)
+      when "PhotoPeep" then PhotoPeep.new(photo_peep_content_params)
+      end
     end
 
-    def content_params
+    def text_peep_content_params
       params.require(:peep).require(:content).permit(:body)
+    end
+
+    def photo_peep_content_params
+      params.require(:peep).require(:content).permit(:image)
     end
 
     def redirect_options_for(peep)
