@@ -14,7 +14,15 @@ class PeepsController < ApplicationController
   private
 
     def peep_params
-      params.require(:peep).permit(:body)
+      { content: content_from_params }
+    end
+
+    def content_from_params
+      TextPeep.new(content_params)
+    end
+
+    def content_params
+      params.require(:peep).require(:content).permit(:body)
     end
 
     def redirect_options_for(peep)

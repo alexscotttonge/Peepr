@@ -6,7 +6,7 @@ RSpec.feature "User creates a peep" do
     visit sign_in_path
     sign_in_with_email
 
-    fill_in "peep_body", with: "Here me now"
+    fill_in "peep_content_body", with: "Here me now"
     click_on "Peep!"
 
     expect(page).to have_content "Peeped successfully!"
@@ -19,7 +19,7 @@ RSpec.feature "User creates a peep over 140 characters" do
     visit sign_in_path
     sign_in_with_email
 
-    fill_in "peep_body", with: "A" * 141
+    fill_in "peep_content_body", with: "A" * 141
     click_on "Peep!"
 
     expect(page).to have_content "Could not Peep yo"

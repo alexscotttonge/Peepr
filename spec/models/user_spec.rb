@@ -17,7 +17,8 @@ RSpec.describe User, "deleting users" do
   context "when a user is deleted" do
     it "deletes the blog posts associated with the user" do
       user = create :user
-      user.peeps.create(body: "Get in ma belly")
+      text_peep = TextPeep.create(body: "Get your peep on")
+      user.peeps.create(content_id: text_peep.id, content_type: "TextPeep")
 
       user.destroy
 

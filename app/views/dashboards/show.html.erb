@@ -1,8 +1,10 @@
 <h1>Dashboard</h1>
 
 <%= form_for peep do |form| %>
-  <%= form.label :peep %>
-  <%= form.text_field :body, placeholder: "Peep!", required: true %>
+  <%= form.fields_for :content do |content_form| %>
+    <%= form.label :peep %>
+    <%= content_form.text_field :body, placeholder: "Peep!", required: true %>
+  <% end %>
   <%= form.submit "Peep!" %>
 <% end %>
 
