@@ -1,1 +1,13 @@
-<%= photo_peep.images %>
+<%#= photo_peep.images %>
+
+<%# if photo_peep.images.attached? %>
+  <%= photo_peep.images.each do |image| %>
+    <%= image_tag(image.image_url) %>
+  <% end %>
+<%# end %>
+
+<!-- image = MiniMagick::Image.new("input.jpg")
+image.path #=> "input.jpg"
+image.resize "100x100" -->
+
+<%#= image_tag image.variant(resize: '100x100').processed.service_url %>
