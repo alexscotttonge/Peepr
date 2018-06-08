@@ -29,7 +29,7 @@ class PeepsController < ApplicationController
     end
 
     def photo_peep_content_params
-      params.require(:peep).require(:content).permit(:image)
+      params.require(:peep).require(:content).permit(images: [])
     end
 
     def redirect_options_for(peep)

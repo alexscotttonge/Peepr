@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :photo_peep do
+    
+  end
   factory :text_peep do
     body "MyString"
   end
