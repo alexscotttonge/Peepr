@@ -5,4 +5,18 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   has_many :peeps, dependent: :destroy
+  has_many :likes
+  has_many :liked_peeps, through: :likes, source: :peep
+
+  def like(peep)
+    liked_peeps << peep
+  end
+
+  def unlike(peep)
+    liked_peeps.destroy(peep)
+  end
+
+  def liked?(peep)
+    liked_peep_ids.include?(peep.id)
+  end
 end

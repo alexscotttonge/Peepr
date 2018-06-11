@@ -6,4 +6,12 @@ module PeepHelper
 
     image_tag gravatar_url
   end
+
+  def like_button(peep)
+    if current_user.liked?(peep)
+      link_to "Unlike", unlike_peep_path(peep), method: :delete
+    else
+      link_to "Like", like_peep_path(peep), method: :post
+    end
+  end
 end
