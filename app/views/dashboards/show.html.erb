@@ -11,7 +11,7 @@
 <%= form_for peep do |form| %>
   <%= form.hidden_field :content_type, value: "PhotoPeep" %>
   <%= form.fields_for :content do |content_form| %>
-    <%= content_form.file_field :image, required: true %>
+    <%= content_form.file_field :images, required: true %>
   <% end %>
   <%= form.submit "Peep with image!" %>
 <% end %>

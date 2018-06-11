@@ -1,8 +1,8 @@
-<%#= photo_peep.images %>
+<%= photo_peep.images %>
 
-<%# if photo_peep.images.attached? %>
+<%= p photo_peep.images.attached? %>
   <%= photo_peep.images.each do |image| %>
-    <%= image_tag(image.image_url) %>
+  <%= image_tag(image) %>
   <% end %>
 <%# end %>
 
