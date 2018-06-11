@@ -1,6 +1,9 @@
 module PeepHelper
 
   def avatar(user)
-    image_tag "//www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}"
+    email_digest = Digest::MD5.hexdigest(user.email)
+    gravatar_url = "//www.gravatar.com/avatar/#{email_digest}"
+
+    image_tag gravatar_url
   end
 end
