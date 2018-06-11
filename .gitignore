@@ -18,7 +18,11 @@
 
 .byebug_history
 
+# Ignore SimpleCov
 /coverage/*
 
 !.keep
 *.DS_Store
+
+# Ignore Active Storage attachments
+/storage
