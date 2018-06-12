@@ -1,7 +1,10 @@
 <div>
+  <%= avatar peep.user %>
   <%= link_to peep.username, peep.user %>
   <%= render peep.content %>
   <%= link_to peep do %>
     <%= time_ago_in_words(peep.created_at) %> ago
   <% end %>
+  
+  <%= like_button(peep) %>
 </div>
