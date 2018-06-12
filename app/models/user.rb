@@ -19,4 +19,8 @@ class User < ApplicationRecord
   def liked?(peep)
     liked_peep_ids.include?(peep.id)
   end
+
+  def to_param
+    username
+  end
 end
