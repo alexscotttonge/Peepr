@@ -8,6 +8,13 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_peeps, through: :likes, source: :peep
 
+  has_many :following_relationships, foreign_key: :follower_id
+  has_many :followed_users, through: :following_relationships
+
+  def follow(user)
+    followed_users << user
+  end
+
   def like(peep)
     liked_peeps << peep
   end
