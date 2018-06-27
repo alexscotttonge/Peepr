@@ -15,6 +15,14 @@ class User < ApplicationRecord
     followed_users << user
   end
 
+  def following?(user)
+    followed_user_ids.include?(user.id)
+  end
+
+  def unfollow(user)
+    followed_users.delete(user)
+  end
+
   def like(peep)
     liked_peeps << peep
   end
